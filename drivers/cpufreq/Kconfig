@@ -131,6 +131,9 @@ config CPU_FREQ_DEFAULT_GOV_SMARTMAX
  	help
  	  Use the CPUFreq governor 'smartmax' as default
 
+config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND
+ 	bool "intellidemand"
+ 	select CPU_FREQ_GOV_INTELLIDEMAND
 
 endchoice
 
@@ -253,7 +256,11 @@ config CPU_FREQ_GOV_SMARTMAX
  	help
  	  'smartmax' combines ondemand and smartass2
 
+config CPU_FREQ_GOV_INTELLIDEMAND
+ 	tristate "'intellidemand' cpufreq governor"
+ 	depends on CPU_FREQ
 
+ 
 config GENERIC_CPUFREQ_CPU0
 	tristate "Generic CPU0 cpufreq driver"
 	depends on HAVE_CLK && REGULATOR && PM_OPP && OF
