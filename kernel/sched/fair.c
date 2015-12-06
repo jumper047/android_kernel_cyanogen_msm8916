@@ -6215,14 +6215,14 @@ static inline void update_sd_lb_stats(struct lb_env *env,
 
 		sg = sg->next;
 	} while (sg != env->sd->groups);
-}
+
 
 if (!env->sd->parent) {
   /* update overload indicator if we are at root domain */
   if (env->dst_rq->rd->overload != overload)
  env->dst_rq->rd->overload = overload;
  }
- 
+}
 /**
  * check_asym_packing - Check to see if the group is packed into the
  *			sched doman.
